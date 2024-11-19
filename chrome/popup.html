@@ -19,12 +19,33 @@
         text-align: center;
         /* Ensure the text inside is centered horizontally */
     }
+    .thermometer{
+        width: 100px;
+        height: 200px;
+        background-color: lightgray;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+    .thermometer-fill{
+        width: 100%;
+        background-color: green;
+        transition: all 0.5s;
+        bottom: 0;
+        position: absolute;
+        height: 0;
+    }
 </style>
 
 <body>
     <div class="tabs">
         <h1>Opened Tabs</h1>
         <p id="tab-count">Loading...</p>
+        <p id="memory-usage">Loading...</p>
+    </div>
+    <div class="thermometer">
+        <div id="thermometer-fill" class="thermometer-fill">
+        </div>
     </div>
     <script src="popup.js"></script>
 </body>
