@@ -11,7 +11,10 @@
             "512":"icons/tab.png"
     }},
     "permissions": [
-        "tabs","system.memory","storage"
+            "tabs",
+            "storage",
+            "system.memory",
+            "processes"
     ],
     "background": {
         "service_worker": "background.js"

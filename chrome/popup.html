@@ -4,47 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabs Counter</title>
+    <title>Tab Monitor</title>
+    <style>
+        body {
+            width: 200px;
+            padding: 12px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .stats-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .thermometer {
+            width: 12px;
+            height: 80px;
+            background-color: #eee;
+            border-radius: 6px;
+            position: relative;
+            border: 1px solid #ccc;
+        }
+
+        .thermometer-fill {
+            width: 100%;
+            background-color: #44cc44;
+            position: absolute;
+            bottom: 0;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        #tab-count, #memory-usage {
+            margin: 0;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
 </head>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        /* This ensures it takes up the full height of the viewport */
-        margin: 0;
-        /* Remove default body margin */
-        text-align: center;
-        /* Ensure the text inside is centered horizontally */
-    }
-    .thermometer{
-        width: 100px;
-        height: 200px;
-        background-color: lightgray;
-        border-radius: 10px;
-        overflow: hidden;
-        position: relative;
-    }
-    .thermometer-fill{
-        width: 100%;
-        background-color: green;
-        transition: all 0.5s;
-        bottom: 0;
-        position: absolute;
-        height: 0;
-    }
-</style>
 
 <body>
-    <div class="tabs">
-        <h1>Opened Tabs</h1>
-        <p id="tab-count">Loading...</p>
-        <p id="memory-usage">Loading...</p>
-    </div>
-    <div class="thermometer">
-        <div id="thermometer-fill" class="thermometer-fill">
+    <div class="container">
+        <h2>Memory Monitor</h2>
+        <div class="stats-container">
+            <div>
+                <p id="tab-count">Loading...</p>
+                <p id="memory-usage">Loading...</p>
+            </div>
+            <div class="thermometer">
+                <div id="thermometer-fill" class="thermometer-fill"></div>
+            </div>
         </div>
     </div>
     <script src="popup.js"></script>
