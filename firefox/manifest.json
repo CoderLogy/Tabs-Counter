@@ -8,7 +8,7 @@
         "default_popup": "popup.html",
         "default_title": "Tab Counter",
         "default_icon": {
-            "128":"icons/tab.png"
+            "512":"icons/tab.png"
     }},
     "permissions": [
         "tabs"
